@@ -2,21 +2,21 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
-import Container from './components/Autocomplete/Container';
-import Autocomplete from './components/Autocomplete';
+
+import Home from './pages/Home';
+import Search from './pages/Search';
+import NotFound from './pages/NotFound';
 
 const App = () => (
   <Router>
     <Switch>
-      <Route exact path="/" render={() => <div>Home Page</div>}/>
-      <Route path="/search" render={() => <div>Search Page</div>}/>
-      <Route render={() => <div>Page not found!</div>}/>
+      <Route exact path="/" component={Home}/>
+      <Route path="/search" component={Search}/>
+      <Route component={NotFound}/>
     </Switch>
   </Router>
-
 )
   
 
